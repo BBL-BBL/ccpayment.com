@@ -1,8 +1,8 @@
 <?php
 
-namespace src;
+namespace CCPaymentCom;
 
-use src\CCPayment;
+use CCPaymentCom\CCPayment;
 
 class WithdrawalApi extends CCPayment
 {
