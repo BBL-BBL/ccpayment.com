@@ -1,0 +1,12 @@
+{
+  "name": "bbl_bbl_bbl/ccpayment.com",
+  "description": "ccpayment.com 支付",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "wujie",
+      "email": "wujie812@qq.com"
+    }
+  ]
+}
