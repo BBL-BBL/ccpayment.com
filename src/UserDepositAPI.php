@@ -15,8 +15,8 @@ class UserDepositAPI extends CCPayment
      * 创建或获取用户存款地址
      * 此终结点创建或获取用户的永久存款地址。
      * 商家将收到向该地址进行的每次付款的 Webhook 通知。这种类型的存款是“用户存款”。
-     * @param $userId
-     * @param $chain
+     * @param $userId   string  用户 ID 应为 5 - 64 个字符的字符串，不能以“sys”开头。
+     * @param $chain    string  链条的象征
      * @return void
      */
     public function getOrCreateUserDepositAddress($userId, $chain)
