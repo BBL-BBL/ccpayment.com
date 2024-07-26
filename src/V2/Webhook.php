@@ -1,8 +1,6 @@
 <?php
 
-namespace CCPaymentCom;
-
-use CCPaymentCom\CCPayment;
+namespace CCPaymentCom\V2;
 
 class Webhook extends CCPayment
 {
@@ -36,7 +34,7 @@ class Webhook extends CCPayment
         if ($endTimestamp) $this->content["endTimestamp"] = $endTimestamp;
         if ($webhookResult) $this->content["webhookResult"] = $webhookResult;
         if ($transactionType) $this->content["transactionType"] = $transactionType;
-        return $this->Submit("webhook/resend");
+        return $this->Submit("https://ccpayment.com/ccpayment/v2/webhook/resend");
     }
 
     /**

@@ -1,8 +1,6 @@
 <?php
 
-namespace CCPaymentCom;
-
-use CCPaymentCom\CCPayment;
+namespace CCPaymentCom\V2;
 
 class CommonAPI extends CCPayment
 {
@@ -18,7 +16,7 @@ class CommonAPI extends CCPayment
     public function getCoinList()
     {
         $this->content = [];
-        return $this->Submit("getCoinList");
+        return $this->Submit("https://ccpayment.com/ccpayment/v2/getCoinList");
     }
 
     /**
@@ -30,7 +28,7 @@ class CommonAPI extends CCPayment
     {
         $this->content = [];
         if ($coinId) $this->content["coinId"] = $coinId;
-        return $this->Submit("getCoin");
+        return $this->Submit("https://ccpayment.com/ccpayment/v2/getCoin");
     }
 
     /**
@@ -42,7 +40,7 @@ class CommonAPI extends CCPayment
     {
         $this->content = [];
         if ($coinIds) $this->content["coinIds"] = $coinIds;
-        return $this->Submit("getCoinUSDTPrice");
+        return $this->Submit("https://ccpayment.com/ccpayment/v2/getCoinUSDTPrice");
     }
 
     /**
@@ -54,7 +52,7 @@ class CommonAPI extends CCPayment
     {
         $this->content = [];
         if ($CWalletUserId) $this->content["cwalletUserId"] = $CWalletUserId;
-        return $this->Submit("getCwalletUserId");
+        return $this->Submit("https://ccpayment.com/ccpayment/v2/getCwalletUserId");
     }
 
     /**
@@ -69,7 +67,7 @@ class CommonAPI extends CCPayment
         $this->content = [];
         if ($coinId) $this->content["coinId"] = $coinId;
         if ($chain) $this->content["chain"] = $chain;
-        return $this->Submit("getWithdrawFee");
+        return $this->Submit("https://ccpayment.com/ccpayment/v2/getWithdrawFee");
     }
 
     /**
@@ -80,7 +78,7 @@ class CommonAPI extends CCPayment
     public function getFiatList()
     {
         $this->content = [];
-        return $this->Submit("getFiatList");
+        return $this->Submit("https://ccpayment.com/ccpayment/v2/getFiatList");
     }
 
     /**
@@ -91,7 +89,7 @@ class CommonAPI extends CCPayment
     public function getSwapCoinList()
     {
         $this->content = [];
-        return $this->Submit("getSwapCoinList");
+        return $this->Submit("https://ccpayment.com/ccpayment/v2/getSwapCoinList");
     }
 
     /**
@@ -104,7 +102,7 @@ class CommonAPI extends CCPayment
     {
         $this->content = [];
         if ($chains) $this->content["chains"] = $chains;
-        return $this->Submit("getChainList");
+        return $this->Submit("https://ccpayment.com/ccpayment/v2/getChainList");
     }
 
 }

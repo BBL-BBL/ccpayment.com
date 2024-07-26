@@ -1,8 +1,6 @@
 <?php
 
-namespace CCPaymentCom;
-
-use CCPaymentCom\CCPayment;
+namespace CCPaymentCom\V2;
 
 class UserDepositAPI extends CCPayment
 {
@@ -24,7 +22,7 @@ class UserDepositAPI extends CCPayment
         $this->content = [];
         if ($userId) $this->content["userId"] = $userId;
         if ($chain) $this->content["chain"] = $chain;
-        return $this->Submit("getOrCreateUserDepositAddress");
+        return $this->Submit("https://ccpayment.com/ccpayment/v2/getOrCreateUserDepositAddress");
     }
 
     /**
@@ -36,7 +34,7 @@ class UserDepositAPI extends CCPayment
     {
         $this->content = [];
         if ($recordId) $this->content["recordId"] = $recordId;
-        return $this->Submit("getUserDepositRecord");
+        return $this->Submit("https://ccpayment.com/ccpayment/v2/getUserDepositRecord");
     }
 
     /**
@@ -59,6 +57,6 @@ class UserDepositAPI extends CCPayment
         if ($startAt) $this->content["startAt"] = $startAt;
         if ($endAt) $this->content["endAt"] = $endAt;
         if ($nextId) $this->content["nextId"] = $nextId;
-        return $this->Submit("getUserDepositRecordList");
+        return $this->Submit("https://ccpayment.com/ccpayment/v2/getUserDepositRecordList");
     }
 }

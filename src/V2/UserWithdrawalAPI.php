@@ -1,8 +1,6 @@
 <?php
 
-namespace CCPaymentCom;
-
-use CCPaymentCom\CCPayment;
+namespace CCPaymentCom\V2;
 
 class UserWithdrawalAPI extends CCPayment
 {
@@ -33,7 +31,7 @@ class UserWithdrawalAPI extends CCPayment
         if ($memo) $this->content["memo"] = $memo;
         if ($orderId) $this->content["orderId"] = $orderId;
         if ($amount) $this->content["amount"] = $amount;
-        return $this->Submit("applyUserWithdrawToNetwork");
+        return $this->Submit("https://ccpayment.com/ccpayment/v2/applyUserWithdrawToNetwork");
     }
 
     /**
@@ -53,7 +51,7 @@ class UserWithdrawalAPI extends CCPayment
         if ($cwalletUser) $this->content["cwalletUser"] = $cwalletUser;
         if ($amount) $this->content["amount"] = $amount;
         if ($orderId) $this->content["orderId"] = $orderId;
-        return $this->Submit("applyUserWithdrawToCwallet");
+        return $this->Submit("https://ccpayment.com/ccpayment/v2/applyUserWithdrawToCwallet");
     }
 
     /**
@@ -67,7 +65,7 @@ class UserWithdrawalAPI extends CCPayment
         $this->content = [];
         if ($recordId) $this->content["recordId"] = $recordId;
         if ($orderId) $this->content["orderId"] = $orderId;
-        return $this->Submit("getUserWithdrawRecord");
+        return $this->Submit("https://ccpayment.com/ccpayment/v2/getUserWithdrawRecord");
     }
 
     /**
@@ -91,6 +89,6 @@ class UserWithdrawalAPI extends CCPayment
         if ($startAt) $this->content["startAt"] = $startAt;
         if ($endAt) $this->content["endAt"] = $endAt;
         if ($nextId) $this->content["nextId"] = $nextId;
-        return $this->Submit("getUserWithdrawRecordList");
+        return $this->Submit("https://ccpayment.com/ccpayment/v2/getUserWithdrawRecordList");
     }
 }

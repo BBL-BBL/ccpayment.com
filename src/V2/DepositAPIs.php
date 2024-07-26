@@ -1,8 +1,6 @@
 <?php
 
-namespace CCPaymentCom;
-
-use CCPaymentCom\CCPayment;
+namespace CCPaymentCom\V2;
 
 class DepositAPIs extends CCPayment
 {
@@ -47,7 +45,7 @@ class DepositAPIs extends CCPayment
         $this->content["product"] = $product;
         $this->content["returnUrl"] = $returnUrl;
 
-        return $this->Submit("createAppOrderDepositAddress");
+        return $this->Submit("https://ccpayment.com/ccpayment/v2/createAppOrderDepositAddress");
     }
 
 
@@ -60,7 +58,7 @@ class DepositAPIs extends CCPayment
     {
         $this->content = [];
         if ($orderId) $this->content["orderId"] = $orderId;
-        return $this->Submit("getAppOrderInfo");
+        return $this->Submit("https://ccpayment.com/ccpayment/v2/getAppOrderInfo");
     }
 
     /**
@@ -82,7 +80,7 @@ class DepositAPIs extends CCPayment
         $this->content = [];
         if ($referenceId) $this->content["referenceId"] = $referenceId;
         if ($chain) $this->content["chain"] = $chain;
-        return $this->Submit("getOrCreateAppDepositAddress");
+        return $this->Submit("https://ccpayment.com/ccpayment/v2/getOrCreateAppDepositAddress");
     }
 
     /**
@@ -96,7 +94,7 @@ class DepositAPIs extends CCPayment
     {
         $this->content = [];
         if ($recordId) $this->content["recordId"] = $recordId;
-        return $this->Submit("getAppDepositRecord");
+        return $this->Submit("https://ccpayment.com/ccpayment/v2/getAppDepositRecord");
     }
 
     /**
@@ -122,6 +120,6 @@ class DepositAPIs extends CCPayment
         if ($endAt) $this->content["endAt"] = $endAt;
         if ($nextId) $this->content["nextId"] = $nextId;
 
-        return $this->Submit("getAppDepositRecordList");
+        return $this->Submit("https://ccpayment.com/ccpayment/v2/getAppDepositRecordList");
     }
 }

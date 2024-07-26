@@ -1,8 +1,6 @@
 <?php
 
-namespace CCPaymentCom;
-
-use CCPaymentCom\CCPayment;
+namespace CCPaymentCom\V2;
 
 class UserBalance extends CCPayment
 {
@@ -22,7 +20,7 @@ class UserBalance extends CCPayment
     {
         $this->content = [];
         if ($userId) $this->content["userId"] = $userId;
-        return $this->Submit("getUserCoinAssetList");
+        return $this->Submit("https://ccpayment.com/ccpayment/v2/getUserCoinAssetList");
     }
 
     /**
@@ -37,7 +35,7 @@ class UserBalance extends CCPayment
         $this->content = [];
         if ($userId) $this->content["userId"] = $userId;
         if ($coinId) $this->content["coinId"] = $coinId;
-        return $this->Submit("getUserCoinAsset");
+        return $this->Submit("https://ccpayment.com/ccpayment/v2/getUserCoinAsset");
     }
 
 }

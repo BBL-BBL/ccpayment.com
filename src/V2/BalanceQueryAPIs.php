@@ -1,8 +1,6 @@
 <?php
 
-namespace CCPaymentCom;
-
-use CCPaymentCom\CCPayment;
+namespace CCPaymentCom\V2;
 
 class BalanceQueryAPIs extends CCPayment
 {
@@ -11,7 +9,6 @@ class BalanceQueryAPIs extends CCPayment
         parent::__construct($app_id, $app_secret);
     }
 
-
     /**
      * Balance Query APIs 余额查询 API
      *
@@ -19,7 +16,7 @@ class BalanceQueryAPIs extends CCPayment
      */
     public function getAppCoinAssetList()
     {
-        return $this->Submit("getAppCoinAssetList");
+        return $this->Submit("https://ccpayment.com/ccpayment/v2/getAppCoinAssetList");
     }
 
     /**
@@ -32,7 +29,7 @@ class BalanceQueryAPIs extends CCPayment
     {
         $this->content = [];
         $this->content["coinId"] = $coinId;
-        return $this->Submit("getAppCoinAsset");
+        return $this->Submit("https://ccpayment.com/ccpayment/v2/getAppCoinAsset");
     }
 
 }

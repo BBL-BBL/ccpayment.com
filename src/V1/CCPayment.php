@@ -1,12 +1,12 @@
 <?php
 
-namespace CCPaymentCom;
+namespace CCPaymentCom\V1;
 
 class CCPayment
 {
     protected $app_id = "*** your app_id ***";
     protected $app_secret = "*** your app_secret ***";
-    protected $url = "https://ccpayment.com/ccpayment/v2/";
+    protected $url = "";
     protected $content = [];
 
     public function __construct($app_id, $app_secret)
@@ -30,7 +30,7 @@ class CCPayment
 
         $data = array(
             "headers" => array(
-                "Content-Type: application/json;charset=utf-8",
+                "Content-Type: application/json; charset=utf-8",
                 "Appid: " . $this->app_id,
                 "Sign: " . $server_sign,
                 "Timestamp: " . $timestamp

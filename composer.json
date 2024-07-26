@@ -8,5 +8,9 @@
       "name": "wujie",
       "email": "wujie812@qq.com"
     }
-  ]
+  ],
+  "require": {
+    "ext-json": "*",
+    "ext-curl": "*"
+  }
 }

@@ -1,8 +1,6 @@
 <?php
 
-namespace CCPaymentCom;
-
-use CCPaymentCom\CCPayment;
+namespace CCPaymentCom\V2;
 
 class UserInternalTransactionAPI extends CCPayment
 {
@@ -30,7 +28,7 @@ class UserInternalTransactionAPI extends CCPayment
         if ($amount) $this->content["amount"] = $amount;
         if ($orderId) $this->content["orderId"] = $orderId;
         if ($remark) $this->content["remark"] = $remark;
-        return $this->Submit("userTransfer");
+        return $this->Submit("https://ccpayment.com/ccpayment/v2/userTransfer");
     }
 
     /**
@@ -44,7 +42,7 @@ class UserInternalTransactionAPI extends CCPayment
         $this->content = [];
         if ($recordId) $this->content["recordId"] = $recordId;
         if ($orderId) $this->content["orderId"] = $orderId;
-        return $this->Submit("getUserTransferRecord");
+        return $this->Submit("https://ccpayment.com/ccpayment/v2/getUserTransferRecord");
     }
 
     /**
@@ -66,7 +64,7 @@ class UserInternalTransactionAPI extends CCPayment
         if ($startAt) $this->content["startAt"] = $startAt;
         if ($endAt) $this->content["endAt"] = $endAt;
         if ($nextId) $this->content["nextId"] = $nextId;
-        return $this->Submit("getUserTransferRecordList");
+        return $this->Submit("https://ccpayment.com/ccpayment/v2/getUserTransferRecordList");
     }
 
 
